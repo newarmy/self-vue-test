@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>车图社</title>
+    <link rel="stylesheet" href="css/reset-wap.css">
+    <link rel="stylesheet" href="css/images.css">
+    <script>
+    (function (win) {
+        //alert(document.documentElement.clientWidth);
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+
+        function resizeLayout() {
+            setTimeout(function () {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            }, 500);
+        }
+        if ("onorientationchange" in win) {
+            win.addEventListener("orientationchange", function () {
+                resizeLayout();
+            }, false);
+        } else {
+            win.addEventListener("resize", function () {
+                resizeLayout();
+            }, false);
+        }
+    }(window));
+    </script>
+</head>
+<body>
+   <div class="first-layer">
+       <div class="head">
+           <span class="close"></span>
+           <span>盘点十大经典跑车</span>
+       </div>
+       <div class="head-image-box">
+           <img class="head-image" src="./images/logo-master.png">
+       </div>
+       <div class="main-image-box">
+           <img src="./images/header.jpg" class="main-image">
+       </div>
+       <div class="main-title">
+           盘点十大经典跑车，小狐带你来 读车
+       </div>
+   </div>
+    <header class="page-head">盘点十大经典跑车</header>
+    <div class="page-logo">
+    </div>
+   <section id="app">
+    <section class="tab-box">
+        <ul class="tab">
+            <li class="tab-item cur">外观</li>
+            <li class="tab-item">内饰</li>
+            <li class="tab-item">空间</li>
+            <li class="tab-item">发动机</li>
+        </ul>
+        <div class="tab-con">
+            <div class="tab-con-item cur">
+                <div class="focus-box">
+                    <ul class="focus">
+                        <li class="focus-item">
+                            <div class="img-box">
+                                <div class="inner-img-box">
+                                    <img class="img-item" src="images/header.jpg" />
+                                    <a href="#" class="to-db-page" target="_blank">
+                                        <p>保时捷<span>Panamera</span></p>
+                                        <p>指导价: <span>88.89-201.79万</span></p>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="img-info">
+                                文字描述描述描述文字文字文文字文字文字文
+                            </p>
+                        </li>
+                    </ul>
+
+                    <div class="focus-nav">
+                        <div class="tit">亮点</div>
+                        <div class="num-nav">
+                            <span class="cur">1</span>
+                            /
+                            <span class="total">6</span>
+                        </div>
+                        <div class="info">外观细节</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-con-item">
+            </div>
+            <div class="tab-con-item">
+            </div>
+            <div class="tab-con-item">
+            </div>
+        </div>
+    </section>
+    <section class="comment-box">
+        <div class="comment-header">你认为最好看的老爷车是？</div>
+        <ul class="comment-list">
+            <li class="comment-item">
+                <div class="user-img-box">
+                    <img class="user-img" src="./images/header.jpg" />
+                </div>
+                <div class="user-info-box">
+                    <h6 class="tit">潮武星1993</h6>
+                    <p class="con">我最喜欢的老爷车是mini cooper，银 灰色系列英伦感十足。</p>
+                </div>
+                <span class="like">2</span>
+            </li>
+            <li class="comment-item">
+                <div class="user-img-box">
+                    <img class="user-img" src="./images/header.jpg" />
+                </div>
+                <div class="user-info-box">
+                    <h6 class="tit">潮武星1993</h6>
+                    <p class="con">我最喜欢的老爷车是mini cooper，银 灰色系列英伦感十足。</p>
+                </div>
+                <span class="like">2</span>
+            </li>
+        </ul>
+    </section>
+    <section class="ewm-box">
+        <img src="images/header.jpg" width="128" height="128">
+        <div class="wx-info">
+            <p>微信扫描二维码 </p>
+            <p>参与评论拿XXXXXXXX大奖</p>
+        </div>
+    </section>
+   </section>
+</body>
+</html>
