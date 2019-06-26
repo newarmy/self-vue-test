@@ -1,28 +1,22 @@
 <template>
     <div>
-    <ul class="nav">
-        <li v-for="item in list">{{item.label}}</li>
-    </ul>
-    <bg></bg>
-        <tab></tab>
-        <life></life>
-        <div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
+        <ul class="nav">
+            <router-link v-for="(item, index) in list" :to="item.path" tag="li">{{item.label}}</router-link>
+        </ul>
+        <transition name="bounce">
+        <router-view></router-view>
+        <router-view name="a"></router-view>
+        <router-view name="b"></router-view>
+        </transition>
     </div>
 </template>
 
 <script>
-    import bg from '../component/background.vue'
-    import tab from '../component/tab.vue'
-    import life from '../component/life.vue'
     export default {
         name: "app",
-        components: {
-            bg,
-            tab,
-            life
-        },
         created () {
           console.log('main  created');
+
         },
         mounted () {
             console.log('main  mounted');
@@ -32,15 +26,41 @@
                 list: [
                     {
                         label: '首页',
-                        value: '1'
+                        value: '1',
+                        path: '/'
                     },
                     {
                         label: '列表',
-                        value: '2'
+                        value: '2',
+                        path: '/tab'
                     },
                     {
-                        label: '关于我们',
-                        value: '3'
+                        label: 'vue插件',
+                        path: '/plugin'
+                    },
+                    {
+                        label: '动态路由匹配1',
+                        path: '/dynamicPath/0'
+                    },
+                    {
+                        label: '动态路由匹配2',
+                        path: '/dynamicPath/1'
+                    },
+                    {
+                        label: '命名视图',
+                        path: '/namedView'
+                    },
+                    {
+                        label: '测试404',
+                        path: '/test404'
+                    },
+                    {
+                        label: '路由组件传参',
+                        path: '/routeToParams'
+                    },
+                    {
+                        label: '数据获取',
+                        path: '/getData'
                     }
                 ]
             }
@@ -63,5 +83,9 @@
 }
 .nav li {
     padding:0 30px;
+    cursor: pointer;
 }
+  .router-link-exact-active{
+      color: red;
+  }
 </style>
